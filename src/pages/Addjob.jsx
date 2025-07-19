@@ -6,7 +6,7 @@ const Addjob = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen w-full bg-blue-50 flex justify-center">
+      <div className="min-h-max w-full bg-blue-50 flex justify-center">
         <Form />
       </div>
     </>

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 const Card = ({
   title,
@@ -15,12 +16,12 @@ const Card = ({
     >
       <h1 className="font-bold text-2xl">{title}</h1>
       <p className="my-3 text-sm">{description}</p>
-      <a
-        href={`${link}`}
+      <NavLink
+        to={`${link}`}
         className={`my-2 ${buttonbg} hover:${buttonhover} text-white w-auto h-auto rounded px-4 py-2 transition-colors duration-300`}
       >
         {button}
-      </a>
+      </NavLink>
     </div>
   );
 };
