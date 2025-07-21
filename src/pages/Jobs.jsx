@@ -5,6 +5,7 @@ import JobCard from "../components/Home/JobCard";
 import Jobhome from "../components/Jobs/Jobhome";
 
 const Jobs = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <Navbar />

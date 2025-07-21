@@ -2,17 +2,19 @@ import React from "react";
 import Navbar from "../components/Home/Navbar";
 import { NavLink, useParams } from "react-router";
 import jobs from "../assets/jobs.json";
+import NotFound from "./NotFound";
 
 const JobListingPage = () => {
   const { jobid } = useParams();
 
   let job = jobs.find((job) => job.id === jobid);
 
+  window.scrollTo(0, 0);
+
   if (!job) {
     return (
       <>
-        <Navbar />
-        <div>The job you're looking for does not exist!</div>
+        <NotFound />
       </>
     );
   }
@@ -27,7 +29,7 @@ const JobListingPage = () => {
           Back to Job Listings
         </NavLink>
       </div>
-      <section className="bg-blue-50 min-h-screen">
+      <section className="bg-blue-50 h-auto">
         <div className="container m-auto ">
           <div className="w-full flex flex-row justify-center items-center">
             <div className="w-[75%] space-y-5 mb-60">
@@ -46,7 +48,7 @@ const JobListingPage = () => {
               </div>
             </div>
             <div className="w-[30%] mr-5 flex flex-col">
-              <div className=" bg-white rounded-xl h-[465px] shadow-xl mt-7 flex flex-col justify-start items-start px-5 py-5">
+              <div className=" bg-white rounded-xl h-auto shadow-md mt-7 flex flex-col justify-start items-start px-5 py-5">
                 <h1 className="font-bold text-xl mb-6">Company Info</h1>
                 <h2 className="mb-3 text-2xl">{job.company.name}</h2>
                 <p>{job.company.description}</p>
@@ -61,8 +63,8 @@ const JobListingPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="bg-white rounded-xl shadow-xl mt-5 h-[180px] flex flex-col justify-start items-start py-5 px-6">
-                <h1 className="text-2xl font-bold mb-5">Manage Job</h1>
+              <div className="bg-white rounded-xl shadow-md mt-5 h-auto flex flex-col justify-start items-start py-5 px-6">
+                <h1 className="text-xl font-bold mb-5">Manage Job</h1>
                 <button className="mb-5 ml-2 w-[95%] bg-indigo-600 rounded-2xl h-10 text-white font-bold hover:bg-indigo-700 transition-colors duration-300">
                   Edit Job
                 </button>
